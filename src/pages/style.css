@@ -1,0 +1,129 @@
+
+.homePage {
+    background-image:url('../assets/images/img3.jpg');
+    background-size:cover;
+    background-position:cover;
+    height:100%;
+    overflow:visible;   
+  }
+  
+  .homePage h1{
+    display:flex;
+    justify-content:center;
+    margin:auto;
+    color:white;
+    font-size:3em;
+    padding:50px;
+  }
+  
+  .mapped {
+    display:flex;
+    justify-content:center;
+    margin: 0 auto; 
+    width:300px;
+  }
+  
+  .aboutPage {
+      background-image:url('../assets/images/img2.jpg');
+      background-size:cover;
+      background-position:cover;
+      overflow:visible;
+      height:100vh;
+    }
+  
+    .aboutPage h1{
+      display:flex;
+      justify-content:center;
+      margin:auto;
+      color:white;
+      font-size:3em;
+      padding:50px;
+    }
+  
+    .contactPage {
+      background-image:url('../assets/images/img4.jpg');
+      background-size:cover;
+      background-position:cover;
+      overflow:visible;
+      height:100vh;
+    }
+  
+    .contactPage h1{
+      display:flex;
+      justify-content:center;
+      margin:auto;
+      color:white;
+      font-size:3em;
+      padding:50px;
+    }
+
+    .bookContainer{
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .btnBook {
+        font-size:1em;
+        width:100px;
+        height:40px;
+        color:white;
+        background-color:salmon;
+        border:none;
+        border-radius:5px;
+        margin:20px auto;
+      }
+
+    .btnBook:hover {
+        color:white;
+        background-color:rgb(182, 182, 182);
+        border:1px solid rgb(81, 40, 40);
+        transform:scale(0.98);
+        cursor:pointer;
+      }
+      
+      .btn:hover {
+        color:white;
+        background-color:rgb(182, 182, 182);
+        border:1px solid rgb(81, 40, 40);
+        transform:scale(0.98);
+      }
+
+      .searchBar {
+        margin:auto;
+        width:100%;
+        display:flex;
+      }
+
+
+      .bookingPage {
+        background-image:url('../assets/images/img3.jpg');
+        background-size:cover;
+        background-position:cover;
+        height:100vh;
+        overflow:visible;   
+      }
+      
+      .bookingPage h1{
+        display:flex;
+        justify-content:center;
+        margin:auto;
+        color:white;
+        font-size:3em;
+        padding:50px;
+      }
+  
+      .adultBox {
+        display:flex;
+        justify-content:center;
+        flex-direction: column;
+        padding:20px;
+        width:20%;
+        margin:auto;
+      }
+
+      .directions {
+        text-align:center;
+        color:white;
+      }
+  

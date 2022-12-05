@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+  background-color:tomato;
+  width: 100%;
+  height:60px;
+}
+
+.navbar-container a {
+  padding:0 40px;
+  text-decoration: none;
+  color:white;
+  font-weight:500; 
+}
+
+.searchBar {
+  margin:auto;
+  width:100%;
+  display:flex;
+}
+
+input {
+  border:none;
+  background-color:rgb(228, 226, 226);
+  color:black;
+  height:30px;
+  width:300px;
+  padding:5px;
+}
+
+label {
+  font-weight:500;
+  font-size:1em;
+  color:white;
+}
+
+
+.checkbox {
+  height:17px;
+  width:17px;
+}
+
+.flightComponent {
+  margin: auto;
+  display:flex;
+  color:white;
+  z-index:10;
+}
+
+.flightTitle {
+  margin: 10px auto;
+}
+
+.btn {
+  font-size:1em;
+  width:100%;
+  height:40px;
+  color:white;
+  background-color:salmon;
+  border:none;
+  border-radius:5px;
+  margin:20px auto;
+}
+
+.btn:hover {
+  color:white;
+  background-color:rgb(182, 182, 182);
+  border:1px solid rgb(81, 40, 40);
+  transform:scale(0.98);
+  cursor:pointer;
+}
+
+.itineraries {
+  display:flex;
+  flex-direction:row;
+  gap:30px;
+  margin:20px 0;
+}
+
+.itinerary {
+  padding:30px;
+  background-color:lightblue;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius:5px;
+} 
+
+.itinerary:hover{
+  transform:scale(1.05);
+  cursor:pointer;
+}
+
+.selected-itinerary {
+  padding:30px;
+  background-color: salmon;
+  border-radius:5px;
+}
+
+.selected-itinerary:hover {
+  transform:scale(1.05);
+  cursor:pointer;
+  
+}
+
