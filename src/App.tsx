@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { NavBar } from "./components/NavBar";
 import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { BookingPage } from './pages/BookingPage';
+import { CreatedBookingPage } from './pages/CreatedBookingPage';
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/book" element={< BookingPage/>} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/myflights" element={<CreatedBookingPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
