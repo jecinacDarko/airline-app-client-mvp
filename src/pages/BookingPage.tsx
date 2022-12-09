@@ -28,13 +28,11 @@ export function BookingPage() {
   } 
 
   const [showBooking, setShowBooking] = useState<boolean>(false);
-
   const [children, setChildren] = useState<PersonDetails[]>(initialChildren);
-  
+  const [show, setShow] = useState<boolean>(false);
+
   const toFlight = useSelector((store: Store) => store.flights.directFlights.map(flight => new Flight(flight)).find(flight => flight.flight_id === toItinerary?.flightId)) as Flight;
-
   const fromFlight = useSelector((store: Store) => store.flights.returnFlights.map(flight => new Flight(flight)).find(flight => flight.flight_id === fromItinerary?.flightId)) as Flight;
-
   const bookingResult = useSelector((store: Store) => store.createdBookings.booking);
   
   useEffect(() => {

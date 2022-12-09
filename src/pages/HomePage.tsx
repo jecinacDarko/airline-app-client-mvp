@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import FligthComponent from "../components/FligthComponent";
@@ -8,8 +9,11 @@ import { setFromItinerary, setToItinerary } from "../slices/currentBookingSlice"
 import { Store } from "../store/storeModel";
 import { isZero } from "../util/itineraryUtil";
 import './style.css'
+import React from "react";
 
 export function HomePage() {
+
+  const [show, setShow] = useState<boolean>(false);
   const directFlights = useSelector((store: Store) => store.flights.directFlights.map(flight => new Flight(flight)));
   const returnFlights = useSelector((store: Store) => store.flights.returnFlights.map(flight => new Flight(flight)));
 
@@ -63,9 +67,9 @@ export function HomePage() {
             return (<FligthComponent key={flight.flight_id} flight={flight} action={setFromItinerary} itinerary={fromItinerary}/>)})}
           </div> 
       </div>
-        <div className='bookContainer'>
+         <div className='bookContainer'>
             <button className='btnBook' onClick={ () => navigateToBooking()} disabled={!canNavigate()}>Book!</button>
-        </div>
+        </div> 
 
   </div>
   )
