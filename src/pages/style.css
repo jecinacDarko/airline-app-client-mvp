@@ -89,11 +89,17 @@
       }
 
       .bookingPage {
-        background-image:url('../assets/images/img3.jpg');
+        background-image:url('../assets/images/img2.jpg');
         background-size:cover;
         background-position:cover;
         height:100vh;
-        overflow:visible;   
+
+        overflow:visible;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        color:white;
       }
       
       .bookingPage h1{
@@ -118,4 +124,20 @@
         text-align:center;
         color:white;
       }
+
+      .addInfo{
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        width:30%;
+        margin:20px;
+      }
+
+      .addInfo input {
+        margin:5px auto;
+        border-radius:3px;
+        width:100%;
+
+      }
+
   

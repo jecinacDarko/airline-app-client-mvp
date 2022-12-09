@@ -17,11 +17,11 @@ export function CreatedBookingPage() {
   }
 
   return (
-    <>
+    <div>
       <p>Find your booking: </p>
       <input type="text" name="bookingId" onChange={(event) => setBookingId(event.target.value)}></input>
       {showBooking && booking.bookingId && <p>{JSON.stringify(booking)}</p>}
       <button onClick={findBooking}>Find!</button>
-    </>
+    </div>
   );
 }

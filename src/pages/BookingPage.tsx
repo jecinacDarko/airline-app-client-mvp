@@ -80,13 +80,14 @@ export function BookingPage() {
   }
 
   return (
-    <>
-      <p>Finalize your booking for the following flights: </p>
+    <div className ='bookingPage'>
+      <h2>Finalize your booking for the following flights: </h2>
       <p>{toFlight.depatureDestination} to {toFlight.arrivalDestination}</p>
       {!oneWay && <p>{fromFlight.depatureDestination} to {fromFlight.arrivalDestination}</p>}
       {adults.map((adult: PersonDetails, index) => {
         return (
-          <div key={index}>
+          <div className='addInfo' key={index}>
+            <label>Name:</label>
             <input type="text" value={adult.firstName} onChange={(event) => {
               setAdults(
                 adults.map((adult, index_) => {
@@ -96,6 +97,7 @@ export function BookingPage() {
                   } : adult
               }))
             }}></input>
+            <label>Last name:</label>
             <input type="text" value={adult.lastName} onChange={(event) => {
               setAdults(
                 adults.map((adult, index_) => {
@@ -105,6 +107,7 @@ export function BookingPage() {
                   } : adult
               }))
             }}></input>
+             <label>Age:</label>
             <input type="number" value={adult.age} onChange={(event) => {
               setAdults(
                 adults.map((adult, index_) => {
@@ -152,7 +155,7 @@ export function BookingPage() {
       })}
       {showBooking && bookingResult.bookingId && <p>Congratulations, you have booked flight from {fromFlight.depatureDestination} to {fromFlight.arrivalDestination}.
       flight ID: {bookingResult.bookingId}</p>}
-      {!showBooking && !bookingResult.bookingId && <button onClick={makeBooking}>Book now!</button>}
-    </>
+      {!showBooking && !bookingResult.bookingId && <button className='btnBook' onClick={makeBooking}>Book now!</button>}
+    </div>
   );
 }
