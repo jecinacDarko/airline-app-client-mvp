@@ -49,31 +49,39 @@ export default function SearchBar() {
   };
 
   return (
-    <div>
-      <label>From</label><br/>
-      <input type="text" name="from" value={from} onChange={(event) => setFrom(event.target.value)}></input><br/>
-      {/* <ReactSearchAutocomplete 
-        items={ cities } 
-        onSelect={ (item) => setFrom(item.name) } 
-        styling={styling}
-      ></ReactSearchAutocomplete> */} 
-      <label>To</label><br/>
-      {/* <ReactSearchAutocomplete 
-        items={ cities } 
-        onSelect={ (item) => setTo(item.name) } 
-        styling={styling}
-      ></ReactSearchAutocomplete> */}
-      <input type="text" name="to" value={to} onChange={(event) => setTo(event.target.value)}></input><br/>
-      <label>One Way</label><br/>
-      <input className='checkbox' type="checkbox" name="oneway" checked={oneWay} onChange={() => setOneWayLocal(!oneWay)}></input><br/>
-      <label >Departure</label>
-      <DatePicker selected={departureDate} onChange={(date) => {if (date != null) setDepartureDate(date)}}></DatePicker>
+    <div className='form'>
+      <label>From</label>
+      <input type="text" name="from" value={from} onChange={(event) => setFrom(event.target.value)}></input>
+
+      <label>To</label>
+
+      <input 
+        type="text" 
+        name="to" 
+        value={to} 
+        onChange={(event) => setTo(event.target.value)}>
+      </input>
+
+      <label>One Way</label>
+      <input 
+        className='checkbox' 
+        type="checkbox" 
+        name="oneway" 
+        checked={oneWay} 
+        onChange={() => setOneWayLocal(!oneWay)}></input>
+
+      <label>Departure</label>
+      <DatePicker 
+        selected={departureDate} 
+        onChange={(date) => {if (date != null) setDepartureDate(date)}}>  
+      </DatePicker>
       {!oneWay && (<><label >Return Flight</label>
       <DatePicker selected={returnDate} onChange={(date) => {if (date != null) setReturnDate(date)}}></DatePicker></>)}
-      <label>Adult Passengers</label><br/>
-      <input type="number" name="adults" value={adults} onChange={(event) => setAdults(parseInt(event.target.value))}></input><br/>
-      <label>Child Passangers</label><br/>
-      <input type="number" name="child" value={children} onChange={(event) => setChildren(parseInt(event.target.value))}></input><br/>
+
+      <label>Adult Passengers</label>
+      <input type="number" name="adults" value={adults} onChange={(event) => setAdults(parseInt(event.target.value))}></input>
+      <label>Child Passangers</label>
+      <input type="number" name="child" value={children} onChange={(event) => setChildren(parseInt(event.target.value))}></input>
       <button className="btn" type="submit" onClick={createRequest}>Search</button>
     </div>
   )

@@ -27,10 +27,19 @@ body {
   font-weight:500; 
 }
 
-.searchBar {
-  margin:auto;
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:10px auto;
   width:100%;
-  display:flex;
+
+}
+
+input, 
+label {
+  padding:3px 1px;
+
 }
 
 input {
@@ -39,19 +48,23 @@ input {
   color:black;
   height:30px;
   width:300px;
-  padding:5px;
+  padding:8px;
 }
 
 label {
+  width:100%;
   font-weight:500;
-  font-size:1em;
+  font-size:0.9em;
   color:white;
+  text-align:left;
+  
 }
 
-
 .checkbox {
-  height:17px;
-  width:17px;
+  display:block;
+  height:15px;
+  width:15px;
+  float:left;
 }
 
 .flightComponent {
