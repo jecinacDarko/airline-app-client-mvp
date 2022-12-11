@@ -29,7 +29,6 @@ export function BookingPage() {
 
   const [showBooking, setShowBooking] = useState<boolean>(false);
   const [children, setChildren] = useState<PersonDetails[]>(initialChildren);
-  const [show, setShow] = useState<boolean>(false);
 
   const toFlight = useSelector((store: Store) => store.flights.directFlights.map(flight => new Flight(flight)).find(flight => flight.flight_id === toItinerary?.flightId)) as Flight;
   const fromFlight = useSelector((store: Store) => store.flights.returnFlights.map(flight => new Flight(flight)).find(flight => flight.flight_id === fromItinerary?.flightId)) as Flight;
@@ -79,81 +78,95 @@ export function BookingPage() {
 
   return (
     <div className ='bookingPage'>
-      <h2>Finalize your booking for the following flights: </h2>
+      <h2>Please enter passenger info:</h2>
       <p>{toFlight.depatureDestination} to {toFlight.arrivalDestination}</p>
       {!oneWay && <p>{fromFlight.depatureDestination} to {fromFlight.arrivalDestination}</p>}
-      {adults.map((adult: PersonDetails, index) => {
-        return (
-          <div className='addInfo' key={index}>
-            <label>Name:</label>
-            <input type="text" value={adult.firstName} onChange={(event) => {
-              setAdults(
-                adults.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    firstName: event.target.value
-                  } : adult
-              }))
-            }}></input>
-            <label>Last name:</label>
-            <input type="text" value={adult.lastName} onChange={(event) => {
-              setAdults(
-                adults.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    lastName: event.target.value
-                  } : adult
-              }))
-            }}></input>
-             <label>Age:</label>
-            <input type="number" value={adult.age} onChange={(event) => {
-              setAdults(
-                adults.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    age: parseInt(event.target.value)
-                  } : adult
-              }))
-            }}></input>
+        <div className="info-container">
+          <div className="addInfo">
+            {adults.map((adult: PersonDetails, index) => {
+              return (
+                <div className="addAdultInfo" key={index}>
+                  <h3>Adult passenger information:</h3>
+                  <label>Name:</label><br/>
+                  <input type="text" value={adult.firstName} onChange={(event) => {
+                    setAdults(
+                      adults.map((adult, index_) => {
+                        return index_ === index ? {
+                          ...adult, 
+                          firstName: event.target.value
+                        } : adult
+                    }))
+                  }}></input><br/>  
+                  <label>Last name:</label><br/>
+                  <input type="text" value={adult.lastName} onChange={(event) => {
+                    setAdults(
+                      adults.map((adult, index_) => {
+                        return index_ === index ? {
+                          ...adult, 
+                          lastName: event.target.value
+                        } : adult
+                    }))
+                  }}></input><br/>
+                  <label>Age:</label><br/>
+                  <input type="number" value={adult.age} onChange={(event) => {
+                    setAdults(
+                      adults.map((adult, index_) => {
+                        return index_ === index ? {
+                          ...adult, 
+                          age: parseInt(event.target.value)
+                        } : adult
+                    }))
+                  }}></input>
+                </div>
+              )
+            })}
+                
+                
+                    {children.map((child: PersonDetails, index) => {
+                      return (
+                        <div className="addChildInfo" key={index}><h3>Child passenger information:</h3>
+                          <label>Name:</label><br/>
+                          <input type="text" value={child.firstName} onChange={(event) => {
+                            setChildren(
+                              children.map((adult, index_) => {
+                                return index_ === index ? {
+                                  ...adult, 
+                                  firstName: event.target.value
+                                } : adult
+                            }))
+                          }}></input><br/>
+                          <label>Last name:</label><br/>
+                          <input type="text" value={child.lastName} onChange={(event) => {
+                            setChildren(
+                              children.map((adult, index_) => {
+                                return index_ === index ? {
+                                  ...adult, 
+                                  lastName: event.target.value
+                                } : adult
+                            }))
+                          }}></input><br/>
+                          <label>Age:</label><br/>
+                          <input type="number" value={child.age} onChange={(event) => {
+                            setChildren(
+                              children.map((adult, index_) => {
+                                return index_ === index ? {
+                                  ...adult, 
+                                  age: parseInt(event.target.value)
+                                } : adult
+                            }))
+                          }}></input>
+                      </div>
+                      )
+              
+                    })}
+                
           </div>
-        )
-      })}
-       {children.map((child: PersonDetails, index) => {
-        return (
-          <div key={index}>
-            <input type="text" value={child.firstName} onChange={(event) => {
-              setChildren(
-                children.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    firstName: event.target.value
-                  } : adult
-              }))
-            }}></input>
-            <input type="text" value={child.lastName} onChange={(event) => {
-              setChildren(
-                children.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    lastName: event.target.value
-                  } : adult
-              }))
-            }}></input>
-            <input type="number" value={child.age} onChange={(event) => {
-              setChildren(
-                children.map((adult, index_) => {
-                  return index_ === index ? {
-                    ...adult, 
-                    age: parseInt(event.target.value)
-                  } : adult
-              }))
-            }}></input>
-          </div>
-        )
-      })}
-      {showBooking && bookingResult.bookingId && <p>Congratulations, you have booked flight from {fromFlight.depatureDestination} to {fromFlight.arrivalDestination}.
-      flight ID: {bookingResult.bookingId}</p>}
-      {!showBooking && !bookingResult.bookingId && <button className='btnBook' onClick={makeBooking}>Book now!</button>}
+        </div>
+                      
+                {showBooking && bookingResult.bookingId && <p>Congratulations, you have booked flight from {fromFlight.depatureDestination} to {fromFlight.arrivalDestination}.
+                flight ID: {bookingResult.bookingId}</p>}
+                {!showBooking && !bookingResult.bookingId && <button className='btnBook' onClick={makeBooking}>Book now!</button>}
+                
     </div>
   );
 }

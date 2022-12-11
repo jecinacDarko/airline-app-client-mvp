@@ -13,7 +13,6 @@ import React from "react";
 
 export function HomePage() {
 
-  const [show, setShow] = useState<boolean>(false);
   const directFlights = useSelector((store: Store) => store.flights.directFlights.map(flight => new Flight(flight)));
   const returnFlights = useSelector((store: Store) => store.flights.returnFlights.map(flight => new Flight(flight)));
 

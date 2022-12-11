@@ -1,144 +1,147 @@
 .homePage {
-    background-image:url('../assets/images/img3.jpg');
-    background-size:cover;
-    background-position:cover;
-    height:100vh;
-    overflow:visible;   
-  }
-  
-  .homePage h1{
-    display:flex;
-    justify-content:center;
-    margin:auto;
-    color:white;
-    font-size:3em;
-    padding:50px;
-  }
-  
-  .mapped {
-    display:flex;
-    justify-content:center;
-    margin: 0 auto;
-    width:300px;
-    height:100%;
-  }
-  
-  .aboutPage {
-      background-image:url('../assets/images/img2.jpg');
-      background-size:cover;
-      background-position:cover;
-      overflow:visible;
-      height:100vh;
-    }
-  
-    .aboutPage h1{
-      display:flex;
-      justify-content:center;
-      margin:30px auto;
-      color:white;
-      font-size:3em;
-      padding:35px;
-    }
-  
-    .contactPage {
-      background-image:url('../assets/images/img4.jpg');
-      background-size:cover;
-      background-position:cover;
-      overflow:visible;
-      height:100vh;
-    }
-  
-    .contactPage h1{
-      display:flex;
-      justify-content:center;
-      margin:auto;
-      color:white;
-      font-size:3em;
-      padding:50px;
-    }
+  background-image:url('../assets/images/img3.jpg');
+  background-size:cover;
+  background-position:cover;
+  height:100vh;
+  overflow:visible;   
+}
 
-    .bookContainer{
-        width:100%;
-        display:flex;
-        justify-content:center;
-    }
+.homePage h1{
+  display:flex;
+  justify-content:center;
+  margin:auto;
+  color:white;
+  font-size:3em;
+  padding:50px;
+}
 
-    .btnBook {
-        font-size:1em;
-        width:100px;
-        height:40px;
-        color:white;
-        background-color:salmon;
-        border:none;
-        border-radius:5px;
-        margin:20px auto;
-      }
+.mapped {
+  display:flex;
+  justify-content:center;
+  margin: 0 auto;
+  width:300px;
+  height:100%;
+}
 
-    .btnBook:hover {
-        color:white;
-        background-color:rgb(182, 182, 182);
-        border:1px solid rgb(81, 40, 40);
-        transform:scale(0.98);
-        cursor:pointer;
-      }
-      
-      .btn:hover {
-        color:white;
-        background-color:rgb(182, 182, 182);
-        border:1px solid rgb(81, 40, 40);
-        transform:scale(0.98);
-      }
+.aboutPage {
+  background-image:url('../assets/images/img2.jpg');
+  background-size:cover;
+  background-position:cover;
+  overflow:visible;
+  height:100vh;
+}
 
-      .bookingPage {
-        background-image:url('../assets/images/img2.jpg');
-        background-size:cover;
-        background-position:cover;
-        height:100vh;
+.aboutPage h1{
+  display:flex;
+  justify-content:center;
+  margin:30px auto;
+  color:white;
+  font-size:3em;
+  padding:35px;
+}
 
-        overflow:visible;
-        display:flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items:center;
-        color:white;
-      }
-      
-      .bookingPage h1{
-        display:flex;
-        justify-content:center;
-        margin:auto;
-        color:white;
-        font-size:3em;
-        padding:50px;
-      }
-  
-      .adultBox {
-        display:flex;
-        justify-content:center;
-        flex-direction: column;
-        padding:20px;
-        width:20%;
-        margin:auto;
-      }
+.contactPage {
+  background-image:url('../assets/images/img4.jpg');
+  background-size:cover;
+  background-position:cover;
+  overflow:visible;
+  height:100vh;
+}
 
-      .directions {
-        text-align:center;
-        color:white;
-      }
+.contactPage h1{
+  display:flex;
+  justify-content:center;
+  margin:auto;
+  color:white;
+  font-size:3em;
+  padding:50px;
+}
 
-      .addInfo{
-        display:flex;
-        flex-direction: column;
-        justify-content:center;
-        width:30%;
-        margin:20px;
-      }
+.bookContainer{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
 
-      .addInfo input {
-        margin:5px auto;
-        border-radius:3px;
-        width:100%;
+.btnBook {
+  font-size:1em;
+  width:100px;
+  height:40px;
+  color:white;
+  background-color:salmon;
+  border:none;
+  border-radius:5px;
+  margin:20px auto;
+}
 
-      }
+.btnBook:hover {
+  color:white;
+  background-color:rgb(182, 182, 182);
+  border:1px solid rgb(81, 40, 40);
+  transform:scale(0.98);
+  cursor:pointer;
+}
 
-  
+.btn:hover {
+  color:white;
+  background-color:rgb(182, 182, 182);
+  border:1px solid rgb(81, 40, 40);
+  transform:scale(0.98);
+}
+
+.bookingPage {
+  background-image:url('../assets/images/img2.jpg');
+  background-size:cover;
+  background-position:cover;
+  height:100vh;
+  overflow:visible;
+  display:flex;
+  flex-direction: column;
+  text-align:center;
+  flex-wrap:wrap;
+  color:white;
+}
+
+.bookingPage h1{
+  margin:auto;
+  color:white;
+  font-size:3em;
+  padding:50px;
+}
+
+.directions {
+  text-align:center;
+  color:white;
+}
+
+.info-container {
+  width:100%;
+  display:flex;
+  background-color:rgb(45, 64, 132);
+  margin:20px auto 50px auto;
+  height:60%;
+}
+
+.addInfo {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  flex-direction:row;
+  text-align:left;
+  gap:20px;
+  height:400px;
+  margin:20px 20px;
+  border-radius:5px;
+  height:100%;
+} 
+
+.addInfo h3 {
+  margin:10px auto;
+}
+
+.addAdultInfo,
+.addChildInfo {
+  background-color:rgb(190, 188, 188);
+  border-radius:10px;
+  height:40%;
+}
