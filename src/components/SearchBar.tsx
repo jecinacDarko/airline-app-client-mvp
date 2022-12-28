@@ -50,6 +50,8 @@ export default function SearchBar() {
 
   return (
     <div className='form'>
+      <h2>Search flights</h2>
+      <div className= 'fields__wrapper'>
       <label>From</label>
       <input type="text" name="from" value={from} onChange={(event) => setFrom(event.target.value)}></input>
 
@@ -83,6 +85,7 @@ export default function SearchBar() {
       <label>Child Passangers</label>
       <input type="number" name="child" value={children} onChange={(event) => setChildren(parseInt(event.target.value))}></input>
       <button className="btn" type="submit" onClick={createRequest}>Search</button>
+      </div>
     </div>
   )
 }
