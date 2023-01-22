@@ -70,7 +70,7 @@ export default function SearchBar() {
         type="checkbox" 
         name="oneway" 
         checked={oneWay} 
-        onChange={() => setOneWayLocal(!oneWay)}></input>
+        onChange={() => setOneWayLocal(!oneWay)}></input><br></br><br></br>
 
       <label>Departure</label>
       <DatePicker 
