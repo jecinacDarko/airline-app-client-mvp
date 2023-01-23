@@ -66,10 +66,10 @@ export function HomePage() {
             return (<FligthComponent key={flight.flight_id} flight={flight} action={setFromItinerary} itinerary={fromItinerary}/>)})}
           </div> 
       </div>
-         <div className='bookContainer'>
-            <button className='btnBook' onClick={ () => navigateToBooking()} disabled={!canNavigate()}>Book!</button>
-        </div> 
-
+      <div className='bookContainer'>
+        {(directFlights.length > 0 && returnFlights.length > 0) && 
+        <button className='btnBook' onClick={ () => navigateToBooking()} disabled={!canNavigate()}>Book!</button> }
+      </div>
   </div>
   )
 }
