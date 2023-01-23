@@ -9,7 +9,6 @@ export function NavBar() {
       <NavLink to="/about">About</NavLink>
       <NavLink to="/myflights">My Flights</NavLink>
       <NavLink to="/contact">Contact</NavLink>
-
     </nav>
   );
 }

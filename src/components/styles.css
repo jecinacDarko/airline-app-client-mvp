@@ -50,14 +50,13 @@ label {
 
 input {
   border:none;
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(222, 215, 215);
   color:black;
   height:30px;
   width:100%;
   padding:8px;
   margin: 0 auto 0.8em auto;
   border-radius:5px;
-  border:1px solid rgb(192, 191, 191);
 }
 
 label {
@@ -70,11 +69,8 @@ label {
 }
 
 .checkbox {
-  display:block;
   height:15px;
   width:15px;
-  float:left;
-
 }
 
 .flightComponent {
@@ -304,3 +300,8 @@ label {
   height:40%;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

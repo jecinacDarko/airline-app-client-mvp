@@ -11,10 +11,11 @@ export function CreatedBookingPage() {
 
   const booking = useSelector((store: Store) => store.createdBookings.booking);
 
-  const findBooking = () => {
+  const findBooking = () => { 
     setShowBooking(true);
     dispatch(fetchBooking(bookingId));
-  }
+}
+
 
   return (
     <div>

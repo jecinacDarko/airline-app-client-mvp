@@ -12,7 +12,7 @@ import './style.css'
 import React from "react";
 
 export function HomePage() {
-
+  
   const directFlights = useSelector((store: Store) => store.flights.directFlights.map(flight => new Flight(flight)));
   const returnFlights = useSelector((store: Store) => store.flights.returnFlights.map(flight => new Flight(flight)));
 
@@ -21,40 +21,14 @@ export function HomePage() {
   const oneWay = useSelector((store: Store) => store.bookings.oneWay);
 
   const navigate = useNavigate();
+  const canNavigate = (): boolean => isZero(toItinerary) ? false : (!oneWay && isZero(fromItinerary) ? false : true)
+  const navigateToBooking = () => (!toItinerary || (oneWay && !fromItinerary)) ? undefined : navigate('/book');
 
-  const canNavigate = (): boolean => {
-    if (isZero(toItinerary)) {
-      return false;
-    }
-
-    if (!oneWay) {
-      if (isZero(fromItinerary)) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  const navigateToBooking = () => {
-    if (!toItinerary) {
-      return;
-    }
-
-    if (oneWay) {
-      if (!fromItinerary) {
-        return;
-      }
-    }
-
-    navigate('/book');
-  }
-    
   return (
   <div className='homePage'>
     <h1>AirBuddy</h1>
-      <div className='mapped'>
-        <SearchBar />
+    <div className='mapped'>
+    <SearchBar/>
       </div> 
         <div className='flights'>
           <div className='flightsTo'>
@@ -67,7 +41,7 @@ export function HomePage() {
           </div> 
       </div>
       <div className='bookContainer'>
-        {(directFlights.length > 0 && returnFlights.length > 0) && 
+        {(directFlights.length > 0 || returnFlights.length > 0) && 
         <button className='btnBook' onClick={ () => navigateToBooking()} disabled={!canNavigate()}>Book!</button> }
       </div>
   </div>

@@ -56,7 +56,7 @@ export default function SearchBar() {
       <input type="text" name="from" value={from} onChange={(event) => setFrom(event.target.value)}></input>
 
       <label>To</label>
-
+      
       <input 
         type="text" 
         name="to" 
@@ -64,14 +64,16 @@ export default function SearchBar() {
         onChange={(event) => setTo(event.target.value)}>
       </input>
 
-      <label>One Way</label>
+      <div className='flex'>
       <input 
-        className='checkbox' 
-        type="checkbox" 
-        name="oneway" 
-        checked={oneWay} 
-        onChange={() => setOneWayLocal(!oneWay)}></input><br></br><br></br>
+          className='checkbox' 
+          type="checkbox" 
+          name="oneway" 
+          checked={oneWay} 
+          onChange={() => setOneWayLocal(!oneWay)}></input>
 
+        <label>One Way</label>
+      </div> 
       <label>Departure</label>
       <DatePicker 
         selected={departureDate} 
